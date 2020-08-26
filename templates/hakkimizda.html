@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The River</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="The River template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/static/styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="/static/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.3.4/animate.css">
+<link href="/static/plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="/static/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/static/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="/static/styles/responsive.css">
+</head>
+<body>
+
+<div class="super_container">
+	
+	<!-- Header -->
+
+	<header class="header">	
+		<div class="header_content d-flex flex-row align-items-center justify-content-start">
+			<div class="logo"><a href="/">The River</a></div>
+			<div class="ml-auto d-flex flex-row align-items-center justify-content-start">
+				<nav class="main_nav">
+					<ul class="d-flex flex-row align-items-start justify-content-start">
+						<li><a href="/">AnaSayfa</a></li>
+						<li class="active"><a href="hakkimizda.html">Hakkımızda</a></li>
+						<li><a href="odalar.html">Odalar</a></li>
+						<li><a href="blog.html">Blog</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</nav>
+                {% if session["logged_in"] %}
+				
+					
+					<div class="book_button" >
+						<a href="/reservation">
+						<img src="/static/images/login.png" width="30" height="30" alt="">
+						<span  style="font-size: small;">Rezervasyonlarım</span></a>
+					</div>
+					<div class="book_button" style="width: 40px; margin-left: 10px;">
+						<a href="basketlist.html"><span style="position: absolute;margin-left: 20px;margin-top: -15px;color: green;">{{sayac}}</span>
+						<img src="/static/images/sepet.png" width="30" height="30" alt="">
+						<span  style="font-size: small;"></span></a>
+					</div>
+					<div class="book_button" style="margin-left: 10px;" >
+						<a href="/logout">
+						<img src="/static/images/login.png" width="30" height="30" alt="">
+						<span  style="font-size: small;">Çıkış Yapın</span></a>
+					</div>
+				{% else %}
+					<div class="book_button">
+						<a href="giris.html" style="font-size: small;">
+						<img src="/static/images/login.png" width="30" height="30" alt="">Admin Giriş</a>
+					</div>
+					<div class="book_button" >
+						<a href="uye_giris.html">
+						<img src="/static/images/login.png" width="30" height="30" alt="">
+						<span  style="font-size: small;">Üye Giriş</span></a>
+					</div>
+					<div class="book_button" >
+						<a href="uye_kayit.html">
+						<img src="/static/images/login.png" width="30" height="30" alt="">
+						<span  style="font-size: small;">Üye Kayit</span></a>
+					</div>
+				{% endif %}
+
+
+				<!-- Hamburger Menu -->
+				<div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
+			</div>
+		</div>
+		
+	</header>
+
+	<!-- Menu -->
+
+
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="home_slider_container">
+			<div class="owl-carousel owl-theme home_slider">
+				
+				<!-- Slide -->
+				<div class="slide">
+                        <div class="background_image" style=" background-image:url(/static/images/index_1.jpg)"></div>
+					<div class="home_container" style="opacity: 0.4;">
+						
+						<div class="container" style=" padding: 25px; color: darkblue; background-color: white;border-radius: 10px;">
+                                KALİTE  POLİTİKAMIZ:<br>
+                                Hızla gelişen ve farklılaşan otelcilikte sektöründe; sürekli gelişme bilinciyle teknolojiyi yakından takip ederek çevre şartlarını iyi kullanıp, gıda güvenliğini de sağlayıp eğitimli personel ile ekip çalışmalarını ön planda tutarak güleryüz ve güveni müşteri memnuniyetiyle bütünleştirip üstün kalite hizmeti, bir sistem içerisinde planlı ve sürekli olarak sunmak otel politikamızdır.
+                                <br>
+                                İLKELERİMİZ:<br>
+                                Gelişen teknolojiden hizmetlerimizde faydalanarak sürekli iyileştirmeyi gerçekleştirmek.
+                                Çevre şartlarına karşı hassasiyet göstermek.
+                                Gıda üretimimizde hijyen kurallarına ve gıda güvenliğine hassasiyet göstermek.
+                                Eğitimli personel ile kaliteli hizmet sunmak.
+                                Güleryüz ve güveni tüm hizmetlerimizde ön planda tutmak.
+                                Müşteri memnuniyetinde müşteri beklentilerinin üzerinde hizmet sunmak.
+                                Yasal şart ve mevzuatları tam olarak karşılamak.
+                                Üstün kalitede hizmeti ilke olarak benimsemiş bulunmaktayız.
+                                <br>
+                                MİSYONUMUZ:<br>
+                                Karaca Otel olarak konuklarımızın tüm ihtiyaç ve beklentilerini en iyi şekilde karşılayarak güvenli ve rahat bir konaklama yapmalarını sağlamaktayız.
+                                Ekibimizi günün değişen şartlarına göre sürekli geliştirerek ve yenileyerek müşteri memnuniyetini en üst düzeyde tutmaya devam etmek için gerekli çalışmaları gerçekleştirmekteyiz.
+                                Üst yönetimi ve ekibi ile Karaca Otel, yenilikçi, takım ruhu ile hareket eden profesyonel hizmet kalitesini konuklarına sunmaktadır.
+                                <br>
+                                VİZYONUMUZ:<br>
+                                Kaliteli ve yenilikçi hizmetlerimiz ile koşulsuz müşteri memnuniyetini sağlayarak sektörümüzün öncüsü olmaktır.
+                                Konuklarımıza ve çalışanlarımıza olan davranışlarımızda karşılıklı saygı ve dürüstlük ilkemizi korumak,
+                                Topluma, doğal çevreye ve insanlığa karşı olan sorumluluğumuzun bilincinde olmak, 
+                                Sürekli yatırımlarla yeni istihdam alanları yaratmak,
+                                Bilgi çağının olanaklarını tüm hizmet alanlarımızda uygulamak,
+                                Konuklarımızın ihtiyaç ve beklentilerini, beklediklerinden daha kaliteli bir hizmet anlayışıyla karşılamak temel hedefimizdir.
+                                <br>
+                               
+							<div class="row">
+								<div class="col">
+									<div class="home_content text-center">
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide -->
+				
+
+			</div>
+			
+		
+	
+	<!-- Footer -->
+
+	<footer class="footer">
+            <div class="footer_content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer_logo_container text-center">
+                                <div class="footer_logo">
+                                    <a href="#"></a>
+                                    <div>The River</div>
+                                    <div>since 1945</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row footer_row">
+                        
+                        <!-- Address -->
+                        
+    
+                        <!-- Reservations -->
+                        <div class="col-lg-4">
+                            <div class="footer_title">Rezervasyon</div>
+                            <div class="footer_list">
+                                <ul>
+                                    <li>Tel: 345 5667 889</li>
+                                    <li>Fax; 6783 4567 889</li>
+                                    <li>reservations@hotelriver.com</li>
+                                </ul>
+                            </div>
+                        </div>
+    
+                        <!-- Newsletter -->
+                        <div class="col-lg-4">
+                            <div class="footer_title">Bülten</div>
+                            <div class="newsletter_container">
+                                <form action="#" class="newsletter_form" id="newsletter_form">
+                                    <input type="email" class="newsletter_input" placeholder="Senin e-mail adresin" required="required">
+                                    <button class="newsletter_button">Abone ol</button>
+                                </form>
+                            </div>
+                        </div>
+    
+                        <!-- Footer images -->
+                        <div class="col-lg-4">
+                            <div class="certificates d-flex flex-row align-items-start justify-content-lg-between justify-content-start flex-lg-nowrap flex-wrap">
+                                <div class="cert"><img src="/static/images/cert_1.png" alt=""></div>
+                                <div class="cert"><img src="/static/images/cert_2.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+    </div>
+        </footer>
+</div>
+
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/styles/bootstrap-4.1.2/popper.js"></script>
+<script src="/static/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+<script src="/static/plugins/greensock/TweenMax.min.js"></script>
+<script src="/static/plugins/greensock/TimelineMax.min.js"></script>
+<script src="/static/plugins/scrollmagic/ScrollMagic.min.js"></script>
+<script src="/static/plugins/greensock/animation.gsap.min.js"></script>
+<script src="/static/plugins/greensock/ScrollToPlugin.min.js"></script>
+<script src="/static/plugins/OwlCarousel2-2.3.4/owl.carousel.js"></script>
+<script src="/static/plugins/easing/easing.js"></script>
+<script src="/static/plugins/progressbar/progressbar.min.js"></script>
+<script src="/static/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="/static/plugins/jquery-datepicker/jquery-ui.js"></script>
+<script src="/static/plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="/static/js/custom.js"></script>
+</body>
+</html>
