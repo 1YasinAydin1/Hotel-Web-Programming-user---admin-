@@ -1,3 +1,6 @@
 # Web-Programlama-1
 
-asf
+* Kullanıcı kayıt/giriş 
+* Admin giriş 
+* Otel/oda güncellemeleri
+
