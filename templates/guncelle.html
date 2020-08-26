@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The River</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="The River template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/static/styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="/static/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.3.4/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.3.4/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="/static/plugins/OwlCarousel2-2.3.4/animate.css">
+<link href="/static/plugins/jquery-datepicker/jquery-ui.css" rel="stylesheet" type="text/css">
+<link href="/static/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="/static/styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="/static/styles/responsive.css">
+</head>
+<body style="background-color: coral;">
+    <header class="header">	
+		<div class="header_content d-flex flex-row align-items-center justify-content-start">
+			<div class="logo"><a href="#">The River</a></div>
+			<div class="ml-auto d-flex flex-row align-items-center justify-content-start">
+
+				
+						<button class="book_button"><a href="giris.html" style="font-size: small;">Çıkış</a></button>
+
+				<!-- Hamburger Menu -->
+			
+			</div>
+		</div>
+		
+	</header>
+    <div style="margin:200px;">
+            
+        {% if msg!=" " %}
+                        <form action="{{ url_for('gunc_on_adim') }}" method="POST">
+                            <h2>Otel Adı </h2>
+                                <label>
+                                    <span><h4 style="color: wheat;">Otel Adı : </h4></span>
+                                    <div style="width: 300px;"><input name="otelad" style="height: 40px;" type="text" name="ad" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br>
+                                <label style="margin:20px">
+                                    <span> </span> 
+                                    <div><button type="submit" value="Giriş" class="booking_button trans_200">Ara</button></div>
+                                   
+                                </label>    
+                        </form>
+                        {% endif %}
+                        {% if msg==" " %}
+                        <form action="{{ url_for('gunc') }}" method="POST">	<div class="row">
+                            <div class="col-md-4">
+                                <h2>Otel Bilgileri</h2><hr>
+                                <label>
+                                    <span><h4 style="color: wheat;">Otel Adı : </h4></span>
+                                    <div style="width: 300px;"><input name="otelad" style="height: 40px;" type="text" name="ad" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br>
+                                <label>
+                                    <span><h4 style="color: wheat;">Otel Yer </h4></span>
+                                    <div  style="width: 300px;"><input name="otelyer" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br><label>
+                                    <span><h4 style="color: wheat;">Otel Yıldız </h4></span>
+                                    <div  style="width: 300px;"><input name="otelyildiz" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br><label>
+                                    <span><h4 style="color: wheat;">Otel Tel </h4></span>
+                                    <div  style="width: 300px;"><input name="oteltel" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br>
+                            
+                            </div> <div class="col-md-4">   <h2>Oda Bilgileri</h2><hr>
+                                <label>
+                                    <span><h4 style="color: wheat;">Oda Yatak Sayısı: </h4></span>
+                                    <div style="width: 300px;"><input name="oda_ytk" style="height: 40px;" type="text" name="ad" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br>
+                                <label>
+                                    <span><h4 style="color: wheat;">Oda Kat : </h4></span>
+                                    <div  style="width: 300px;"><input name="oda_kat" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br><label>
+                                    <span><h4 style="color: wheat;">Oda Ekstra 1:  </h4></span>
+                                    <div  style="width: 300px;"><input name="oda_ekt1" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" ></div>
+                                </label>
+                                <br>  <label>
+                                    <span><h4 style="color: wheat;">Oda Ekstra 2:  </h4></span>
+                                    <div  style="width: 300px;"><input name="oda_ekt2" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" ></div>
+                                </label>
+                            </div>
+                            <div class="col-md-4">
+                                <br><br><hr>
+                              
+                               <label>
+                                    <span><h4 style="color: wheat;">Oda Ekstra 3:  </h4></span>
+                                    <div  style="width: 300px;"><input name="oda_ekt3" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" ></div>
+                                </label>
+                                <br><label>
+                                    <span><h4 style="color: wheat;">Oda Ücret :  </h4></span>
+                                    <div  style="width: 300px;"><input name="oda_ucrt" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br><label>
+                                    <span><h4 style="color: wheat;">Oda No:  </h4></span>
+                                    <div  style="width: 300px;"><input name="oda_no" style="height: 40px;" type="text" name="sifre" class=" booking_input booking_input_a booking_in" placeholder="Giriş" required="required"></div>
+                                </label>
+                                <br>
+                                <label style="margin:20px">
+                                    <span> </span> 
+                                    <div><button type="submit" value="Giriş" class="booking_button trans_200">Güncelle</button></div>
+                                    
+                                </label>    
+
+                            </div>
+                    </div>
+                        </form>
+                        {% else %}
+                        <span><h4 style="color: wheat;">{{msg}}</h4></span>
+                        {% endif %}
+               
+    </div>
+        
+</body>
+</html>
